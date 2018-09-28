@@ -15,14 +15,16 @@ func _ready():
 	shape.set_extents(tileSize);
 	usedCells = get_used_cells();
 	
-
-func _physics_process(delta):
 	var parentNode = get_node("/root/world/Map_Pivot_Point/Map_Body");
 	for cell in usedCells:
 		var collision = CollisionShape2D.new();
 		collision.set_shape(shape);
 		collision.position = cell*32 + Vector2(16,16);
-		parentNode.add_child(collision);
+		parentNode.call_deferred("add_child", collision);
+	
+
+func _physics_process(delta):
+	
 #	# Called every frame. Delta is time since last frame.
 #	# Update game logic here.
-#	pass
+	pass

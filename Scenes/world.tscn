@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Scripts/mapPivotPoint.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/Map_Body.gd" type="Script" id=2]
@@ -8,11 +8,6 @@
 [ext_resource path="res://Assets/Sprites/GENERIC_ball.png" type="Texture" id=6]
 [ext_resource path="res://Assets/Controls/GENERIC_right_arrow.png" type="Texture" id=7]
 [ext_resource path="res://Assets/Controls/GENERIC_left_arrow.png" type="Texture" id=8]
-
-[sub_resource type="RectangleShape2D" id=1]
-
-custom_solver_bias = 0.0
-extents = Vector2( 40.0859, 18.6713 )
 
 [sub_resource type="CircleShape2D" id=2]
 
@@ -24,19 +19,20 @@ radius = 16.0
 [node name="Map_Pivot_Point" type="Position2D" parent="." index="0"]
 
 script = ExtResource( 1 )
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Transform", "Z Index" ]
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="Map_Body" type="KinematicBody2D" parent="Map_Pivot_Point" index="0"]
 
+editor/display_folded = true
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
 collision/safe_margin = 0.08
 script = ExtResource( 2 )
-_sections_unfolded = [ "Pickable" ]
+_sections_unfolded = [ "Pickable", "Visibility", "Z Index" ]
 __meta__ = {
 "_edit_lock_": true
 }
@@ -63,16 +59,9 @@ tile_data = PoolIntArray( -65538, 1, 0, -65537, 2, 0, -131072, 1, 0, -131071, 2,
 script = ExtResource( 4 )
 _sections_unfolded = [ "Cell", "Transform" ]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Map_Pivot_Point/Map_Body" index="1"]
-
-position = Vector2( -3.54849, 530.636 )
-shape = SubResource( 1 )
-__meta__ = {
-"_edit_lock_": true
-}
-
 [node name="Ball" type="StaticBody2D" parent="." index="1"]
 
+editor/display_folded = true
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -81,7 +70,7 @@ constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
 script = ExtResource( 5 )
-_sections_unfolded = [ "Collision", "Pause", "Pickable", "Visibility" ]
+_sections_unfolded = [ "Collision", "Pause", "Pickable", "Visibility", "Z Index" ]
 
 [node name="Ball_Collision" type="CollisionShape2D" parent="Ball" index="0"]
 

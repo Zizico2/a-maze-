@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Assets/Tiles/GENERIC_blue_tile.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Tiles/GENERIC_green_tile.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Tiles/GENERIC_red_tile.png" type="Texture" id=3]
+
+[node name="tileset" type="Node"]
+
+[node name="0" type="Sprite" parent="." index="0"]
+
+texture = ExtResource( 1 )
+centered = false
+_sections_unfolded = [ "Offset" ]
+
+[node name="1" type="Sprite" parent="." index="1"]
+
+position = Vector2( 64, 0 )
+texture = ExtResource( 2 )
+centered = false
+_sections_unfolded = [ "Offset" ]
+
+[node name="2" type="Sprite" parent="." index="2"]
+
+position = Vector2( 128, 0 )
+texture = ExtResource( 3 )
+centered = false
+_sections_unfolded = [ "Offset" ]
+
+

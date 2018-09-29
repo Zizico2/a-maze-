@@ -1,9 +1,14 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://Assets/Controls/Start/sprite_0.png" type="Texture" id=1]
-[ext_resource path="res://Assets/Controls/Start/sprite_1.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Controls/Start/Start_Default.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Controls/Start/Start_Pressed.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/Menus/Start_Game.gd" type="Script" id=3]
+[ext_resource path="res://Assets/Controls/Start/control place holders/sprite_0.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Controls/Start/control place holders/sprite_1.png" type="Texture" id=5]
 
-[node name="start_menu" type="Node2D" index="0"]
+
+
+[node name="start_menu" type="Node2D"]
 
 [node name="Start_Game" type="TextureButton" parent="." index="0"]
 
@@ -12,9 +17,9 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 128.0
-margin_top = 32.0
+margin_top = 20.0
 margin_right = 370.0
-margin_bottom = 121.0
+margin_bottom = 109.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -28,6 +33,7 @@ shortcut = null
 group = null
 texture_normal = ExtResource( 1 )
 texture_pressed = ExtResource( 2 )
+script = ExtResource( 3 )
 _sections_unfolded = [ "Textures" ]
 
 [node name="Scoreboard" type="TextureButton" parent="." index="1"]
@@ -59,8 +65,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 40.0
-margin_bottom = 40.0
+margin_left = 160.0
+margin_top = 124.0
+margin_right = 319.0
+margin_bottom = 183.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -72,9 +80,9 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-__meta__ = {
-"_edit_lock_": true
-}
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 5 )
+_sections_unfolded = [ "Textures" ]
 
 [node name="Settings" type="TextureButton" parent="." index="3"]
 
@@ -95,9 +103,6 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="Store" type="TextureButton" parent="." index="4"]
 
@@ -105,8 +110,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 40.0
-margin_bottom = 40.0
+margin_left = 160.0
+margin_top = 196.0
+margin_right = 319.0
+margin_bottom = 255.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -118,8 +125,10 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-__meta__ = {
-"_edit_lock_": true
-}
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 4 )
+_sections_unfolded = [ "Textures" ]
+
+[connection signal="pressed" from="Start_Game" to="Start_Game" method="_on_Start_Game_pressed"]
 
 

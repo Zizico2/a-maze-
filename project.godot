@@ -11,8 +11,12 @@ config_version=3
 [application]
 
 config/name="a(maze);"
-run/main_scene="res://Scenes/world.tscn"
+run/main_scene="res://Scenes/Menus/MainMenu.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+Global="*res://Scripts/Global.gd"
 
 [display]
 

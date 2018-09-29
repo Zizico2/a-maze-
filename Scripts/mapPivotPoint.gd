@@ -1,18 +1,18 @@
 extends Position2D
-
-
-#defines the rotation speed of the labyrinth
+#Defines the rotation speed of the labyrinth
+const rotationSpeed = 15;
 var rotationPerPhysicsProcess = 0;
 
-
+#Defines the number of times the turn button was pressed (Buffer)
 var times = 0;
+#Defines the number of times the labyrinth needs to rotate
 var pendingRotations = 0;
-const rotationSpeed = 15;
+#Defines the variable that will change the rotation by a specific factor
 var rotationSpeedMultiplier = 1;
 
+#Initialization starts here
 func _ready():
 	position = get_viewport().get_visible_rect().size/2;
-	pass
 
 func _physics_process(delta):
 	if times != 0:

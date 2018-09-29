@@ -3,7 +3,7 @@
 [ext_resource path="res://Assets/Tileset/TEST.tres" type="TileSet" id=1]
 [ext_resource path="res://Scripts/Tile_Map.gd" type="Script" id=2]
 
-[node name="TileMap" type="Node2D"]
+[node name="TileMap" type="Node2D" index="0"]
 
 [node name="Colliding_TileMap" type="TileMap" parent="." index="0"]
 

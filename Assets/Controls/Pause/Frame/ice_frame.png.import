@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/sprite_07.png-4ac1a15d88a707996e256932887859a2.stex"
+path="res://.import/ice_frame.png-f46bad6bab7f8d7e141f46f7b74904de.stex"
 
 [deps]
 
-source_file="res://Assets/Controls/Start/sprite_07.png"
-dest_files=[ "res://.import/sprite_07.png-4ac1a15d88a707996e256932887859a2.stex" ]
+source_file="res://Assets/Controls/Pause/Frame/ice_frame.png"
+dest_files=[ "res://.import/ice_frame.png-f46bad6bab7f8d7e141f46f7b74904de.stex" ]
 
 [params]
 

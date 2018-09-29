@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/sprite_04.png-e3cae484b579fcf5f462276d89326b64.stex"
+path="res://.import/blue_frame.png-a400b4f438af059abf5cc7d2919f0c7f.stex"
 
 [deps]
 
-source_file="res://Assets/Controls/Start/sprite_04.png"
-dest_files=[ "res://.import/sprite_04.png-e3cae484b579fcf5f462276d89326b64.stex" ]
+source_file="res://Assets/Controls/Pause/Frame/blue_frame.png"
+dest_files=[ "res://.import/blue_frame.png-a400b4f438af059abf5cc7d2919f0c7f.stex" ]
 
 [params]
 

@@ -25,17 +25,21 @@ func _ready():
 	pass
 
 func _physics_process(delta):
-	if is_on_wall():
-		print("wall");
+	
 	get_node("/root/world/Ball/Ball_Sprite").rotate(rotation_force);
 	if test_move(global_transform, delta*motion):
 		var y = motion.y * (-0.1) + gravity * gravity_multiplier;
-		motion = move_and_slide(motion, Vector2(0,1));
-		motion.y = y;
+		var x = motion.x;
+		motion = move_and_slide(motion, Vector2(0,10));
+		if is_on_wall():
+			motion.x = -x;	
+		if is_on_floor():
+			motion.y = y;
+		
 		
 	else:
 		motion.y -= gravity * gravity_multiplier;
-		motion = move_and_slide(motion, Vector2(0,1));
+		motion = move_and_slide(motion, Vector2(0,10));
 	
 	if motion.length() == 0:
 		rotation_force = 0;

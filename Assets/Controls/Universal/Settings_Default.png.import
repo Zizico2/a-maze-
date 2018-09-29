@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/2.png-24ed011e99be67fed33f64a57793e9df.stex"
+path="res://.import/Settings_Default.png-bd19f22473c40db751d10a58c2956342.stex"
 
 [deps]
 
-source_file="res://Assets/Controls/Universal/2.png"
-dest_files=[ "res://.import/2.png-24ed011e99be67fed33f64a57793e9df.stex" ]
+source_file="res://Assets/Controls/Universal/Settings_Default.png"
+dest_files=[ "res://.import/Settings_Default.png-bd19f22473c40db751d10a58c2956342.stex" ]
 
 [params]
 

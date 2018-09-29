@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/GENERIC_blue_tile.png-d34242e87d473ae421ffbb0468392054.stex"
+path="res://.import/Start MenuPNG2.png-be383d5216ecf962b7f89410deb21da7.stex"
 
 [deps]
 
-source_file="res://Assets/Tiles/GENERIC_blue_tile.png"
-dest_files=[ "res://.import/GENERIC_blue_tile.png-d34242e87d473ae421ffbb0468392054.stex" ]
+source_file="res://Assets/Controls/Menus/MainMenu/Start MenuPNG2.png"
+dest_files=[ "res://.import/Start MenuPNG2.png-be383d5216ecf962b7f89410deb21da7.stex" ]
 
 [params]
 

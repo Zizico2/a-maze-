@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/GENERIC_green_tile.png-6fad968214e33b88a75e1f5e49f85bdc.stex"
+path="res://.import/Tiles_GRID.png-008eb3bced299c91218c04d6470eb0d3.stex"
 
 [deps]
 
-source_file="res://Assets/Tiles/GENERIC_green_tile.png"
-dest_files=[ "res://.import/GENERIC_green_tile.png-6fad968214e33b88a75e1f5e49f85bdc.stex" ]
+source_file="res://Assets/Tiles/PRISON_prototype_tiles/Tiles_GRID.png"
+dest_files=[ "res://.import/Tiles_GRID.png-008eb3bced299c91218c04d6470eb0d3.stex" ]
 
 [params]
 

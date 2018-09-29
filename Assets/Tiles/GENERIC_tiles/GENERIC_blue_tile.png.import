@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/GENERIC_red_tile.png-43a46c17afcd37fcc899a1df0854d870.stex"
+path="res://.import/GENERIC_blue_tile.png-21af8896ed62b9afc3abdabb6cb9899d.stex"
 
 [deps]
 
-source_file="res://Assets/Tiles/GENERIC_red_tile.png"
-dest_files=[ "res://.import/GENERIC_red_tile.png-43a46c17afcd37fcc899a1df0854d870.stex" ]
+source_file="res://Assets/Tiles/GENERIC_tiles/GENERIC_blue_tile.png"
+dest_files=[ "res://.import/GENERIC_blue_tile.png-21af8896ed62b9afc3abdabb6cb9899d.stex" ]
 
 [params]
 

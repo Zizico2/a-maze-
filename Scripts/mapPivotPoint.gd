@@ -1,9 +1,10 @@
 extends Position2D
 
-# class member variables go here, for example:
-# var a = 2
-# var b = "textvar"
+
+#defines the rotation speed of the labyrinth
 var rotationPerPhysicsProcess = 0;
+
+
 var times = 0;
 var pendingRotations = 0;
 const rotationSpeed = 15;
@@ -11,8 +12,6 @@ var rotationSpeedMultiplier = 1;
 
 func _ready():
 	position = get_viewport().get_visible_rect().size/2;
-	# Called when the node is added to the scene for the first time.
-	# Initialization here
 	pass
 
 func _physics_process(delta):

@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/sprite_0.png-0fb99b912723e1ab836b9a99c59ec948.stex"
+path="res://.import/End.png-696a25726aed6ba819544d5cbf8ee7eb.stex"
 
 [deps]
 
-source_file="res://Assets/Controls/Universal/sprite_0.png"
-dest_files=[ "res://.import/sprite_0.png-0fb99b912723e1ab836b9a99c59ec948.stex" ]
+source_file="res://Assets/Sprites/Victory/End.png"
+dest_files=[ "res://.import/End.png-696a25726aed6ba819544d5cbf8ee7eb.stex" ]
 
 [params]
 

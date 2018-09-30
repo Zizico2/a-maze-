@@ -6,10 +6,12 @@
 [ext_resource path="res://Assets/Controls/Settings/SFS_On.png" type="Texture" id=4]
 [ext_resource path="res://Assets/Controls/Settings/SFX_Off.png" type="Texture" id=5]
 [ext_resource path="res://Assets/Controls/Pause/Frame/grey_frame.png" type="Texture" id=6]
-[ext_resource path="res://Assets/Controls/Universal/sprite_0.png" type="Texture" id=7]
-[ext_resource path="res://Assets/Controls/Universal/sprite_1.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Controls/Universal/Back_Default.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Controls/Universal/Back_Pressed.png" type="Texture" id=8]
 [ext_resource path="res://Assets/Controls/Universal/Settings_Default.png" type="Texture" id=9]
 [ext_resource path="res://Assets/Controls/Universal/Settings_Pressed.png" type="Texture" id=10]
+
+
 
 [sub_resource type="SpriteFrames" id=3]
 

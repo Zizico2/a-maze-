@@ -1,84 +1,21 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Scenes/generic_world.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/generic_level_selector.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/prison_world.gd" type="Script" id=2]
-[ext_resource path="res://Assets/Level_Button_Fake_Texture.png" type="Texture" id=3]
-[ext_resource path="res://Assets/Placeholder_Levele_Picker.png" type="Texture" id=4]
 
 [node name="prison_world" instance=ExtResource( 1 )]
 
-editor/display_folded = false
 script = ExtResource( 2 )
-
-[node name="Level_1" parent="." index="0"]
-
-margin_left = 20.0
-margin_top = 22.0
-margin_right = 84.0
-margin_bottom = 86.0
-texture_normal = ExtResource( 3 )
-_sections_unfolded = [ "Textures" ]
-
-[node name="Level_2" parent="." index="1"]
-
-margin_left = 220.0
-margin_top = 29.0
-margin_right = 260.0
-margin_bottom = 69.0
-texture_normal = ExtResource( 3 )
-
-[node name="Level_3" parent="." index="2"]
-
-margin_left = 220.0
-margin_top = 29.0
-margin_right = 260.0
-margin_bottom = 69.0
-texture_normal = ExtResource( 3 )
-
-[node name="Level_4" parent="." index="3"]
-
-margin_left = 220.0
-margin_top = 29.0
-margin_right = 260.0
-margin_bottom = 69.0
-texture_normal = ExtResource( 3 )
-
-[node name="Level_5" parent="." index="4"]
-
-margin_left = 220.0
-margin_top = 29.0
-margin_right = 260.0
-margin_bottom = 69.0
-texture_normal = ExtResource( 3 )
 
 [node name="Level_6" parent="." index="5"]
 
-margin_left = 220.0
-margin_top = 29.0
-margin_right = 260.0
-margin_bottom = 69.0
-texture_normal = ExtResource( 3 )
-
-[node name="Level_7" parent="." index="6"]
-
-margin_left = 220.0
-margin_top = 29.0
-margin_right = 260.0
-margin_bottom = 69.0
-texture_normal = ExtResource( 3 )
+margin_left = 174.0
+margin_right = 233.0
 
 [node name="Level_8" parent="." index="7"]
 
-margin_left = 220.0
-margin_top = 29.0
-margin_right = 260.0
-margin_bottom = 69.0
-texture_normal = ExtResource( 3 )
-
-[node name="Levels" parent="." index="8"]
-
-position = Vector2( 240.013, 134.992 )
-texture = ExtResource( 4 )
+margin_left = 325.0
+margin_right = 384.0
 
 [connection signal="pressed" from="Level_1" to="." method="_on_Level_1_pressed"]
 

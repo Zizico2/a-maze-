@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Resume_Presed.png-da8f729388879edc1f8e468b5eb6da77.stex"
+path="res://.import/Scorched.png-22094dc7031f10f959e4b2275898368a.stex"
 
 [deps]
 
-source_file="res://Assets/Controls/Pause/Resume_Presed.png"
-dest_files=[ "res://.import/Resume_Presed.png-da8f729388879edc1f8e468b5eb6da77.stex" ]
+source_file="res://Assets/Level_Picker/Scorched.png"
+dest_files=[ "res://.import/Scorched.png-22094dc7031f10f959e4b2275898368a.stex" ]
 
 [params]
 

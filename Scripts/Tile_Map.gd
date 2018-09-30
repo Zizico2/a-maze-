@@ -15,7 +15,7 @@ func _ready():
 	shape.set_extents(tileSize);
 	usedCells = get_used_cells();
 	
-	var parentNode = get_node("/root/world/Map_Pivot_Point/Map_Body");
+	var parentNode = get_node("/root/generic_level/Map_Pivot_Point/Map_Body");
 	for cell in usedCells:
 		var collision = CollisionShape2D.new();
 		collision.set_shape(shape);

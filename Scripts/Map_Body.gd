@@ -26,9 +26,9 @@ func _ready():
 
 func _physics_process(delta):
 	
-	get_node("/root/world/Ball/Ball_Sprite").rotate(rotation_force);
+	get_node("/root/generic_level/Ball/Ball_Sprite").rotate(rotation_force);
 	if test_move(global_transform, delta*motion):
-		var y = motion.y * (-0.1) + gravity * gravity_multiplier;
+		var y = motion.y * (-0.225) + gravity * gravity_multiplier;
 		var x = motion.x;
 		motion = move_and_slide(motion, Vector2(0,10));
 		if is_on_wall():

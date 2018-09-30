@@ -1,4 +1,4 @@
 extends Node2D
 
 func _on_Start_Game_pressed():
-	get_tree().change_scene("res://Scenes/world.tscn");
+	get_tree().change_scene("res://Scenes/world_selecter.tscn");

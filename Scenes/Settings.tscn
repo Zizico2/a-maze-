@@ -1,10 +1,33 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=13 format=2]
 
-[ext_resource path="res://Assets/Controls/Pause/Frame/grey_frame.png" type="Texture" id=1]
-[ext_resource path="res://Assets/Controls/Universal/2.png" type="Texture" id=2]
-[ext_resource path="res://Assets/Controls/Universal/1.png" type="Texture" id=3]
-[ext_resource path="res://Assets/Controls/Universal/Settings_Default.png" type="Texture" id=4]
-[ext_resource path="res://Assets/Controls/Universal/Settings_Pressed.png" type="Texture" id=5]
+[ext_resource path="res://Scenes/TexturesSlider.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Assets/Controls/Settings/Music_On.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Controls/Settings/Music_Off.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Controls/Settings/SFS_On.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Controls/Settings/SFX_Off.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Controls/Pause/Frame/grey_frame.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Controls/Universal/sprite_0.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Controls/Universal/sprite_1.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Controls/Universal/Settings_Default.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Controls/Universal/Settings_Pressed.png" type="Texture" id=10]
+
+[sub_resource type="SpriteFrames" id=3]
+
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=2]
+
+animations = [ {
+"frames": [ ExtResource( 4 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
 
 [node name="Settings" type="Control" index="0"]
 
@@ -26,6 +49,7 @@ __meta__ = {
 
 [node name="Settings_Popup" type="Popup" parent="." index="0"]
 
+visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -44,144 +68,41 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="SFX" type="Control" parent="Settings_Popup" index="0"]
+[node name="Music" parent="Settings_Popup" index="0" instance=ExtResource( 1 )]
 
-editor/display_folded = true
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_right = 40.0
-margin_bottom = 40.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-__meta__ = {
-"_edit_lock_": true
-}
+margin_left = 166.0
+margin_top = 164.0
+margin_right = 206.0
+margin_bottom = 204.0
+_sections_unfolded = [ "Rect" ]
 
-[node name="HSlider" type="HSlider" parent="Settings_Popup/SFX" index="0"]
+[node name="Icon" parent="Settings_Popup/Music" index="8"]
 
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_right = 16.0
-margin_bottom = 16.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 0
-min_value = 0.0
-max_value = 100.0
-step = 1.0
-page = 0.0
-value = 0.0
-exp_edit = false
-rounded = false
-editable = true
-tick_count = 0
-ticks_on_borders = false
-focus_mode = 2
-_sections_unfolded = [ "Visibility" ]
-__meta__ = {
-"_edit_lock_": true
-}
+frames = SubResource( 3 )
 
-[node name="Sprite" type="AnimatedSprite" parent="Settings_Popup/SFX" index="1"]
+[node name="SFX" parent="Settings_Popup" index="1" instance=ExtResource( 1 )]
 
-animation = "default"
-__meta__ = {
-"_edit_lock_": true
-}
+margin_left = 166.0
+margin_top = 104.0
+margin_right = 206.0
+margin_bottom = 144.0
+_sections_unfolded = [ "Rect" ]
 
-[node name="Music" type="Control" parent="Settings_Popup" index="1"]
+[node name="Icon" parent="Settings_Popup/SFX" index="8"]
 
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_right = 40.0
-margin_bottom = 40.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-__meta__ = {
-"_edit_lock_": true
-}
+frames = SubResource( 2 )
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="Settings_Popup/Music" index="0"]
-
-animation = "default"
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="InvertArrows" type="Control" parent="Settings_Popup" index="2"]
-
-editor/display_folded = true
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_right = 40.0
-margin_bottom = 40.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="CheckBox" type="CheckBox" parent="Settings_Popup/InvertArrows" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 208.0
-margin_top = 88.0
-margin_right = 232.0
-margin_bottom = 112.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = true
-enabled_focus_mode = 2
-shortcut = null
-group = null
-flat = false
-align = 0
-
-[node name="Sprite" type="Sprite" parent="Settings_Popup/InvertArrows" index="1"]
-
-[node name="Sprite" type="Sprite" parent="Settings_Popup" index="3"]
+[node name="Sprite" type="Sprite" parent="Settings_Popup" index="2"]
 
 position = Vector2( 240, 135 )
 z_index = -2
-texture = ExtResource( 1 )
+texture = ExtResource( 6 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Back" type="TextureButton" parent="Settings_Popup" index="4"]
+[node name="Back" type="TextureButton" parent="Settings_Popup" index="3"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -202,8 +123,8 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-texture_normal = ExtResource( 2 )
-texture_pressed = ExtResource( 3 )
+texture_normal = ExtResource( 7 )
+texture_pressed = ExtResource( 8 )
 _sections_unfolded = [ "Textures" ]
 __meta__ = {
 "_edit_lock_": true
@@ -230,11 +151,13 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-texture_normal = ExtResource( 4 )
-texture_pressed = ExtResource( 5 )
+texture_normal = ExtResource( 9 )
+texture_pressed = ExtResource( 10 )
 _sections_unfolded = [ "Textures", "Visibility" ]
 __meta__ = {
 "_edit_lock_": true
 }
 
 
+[editable path="Settings_Popup/Music"]
+[editable path="Settings_Popup/SFX"]

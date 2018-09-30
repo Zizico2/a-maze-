@@ -1,0 +1,345 @@
+[gd_scene load_steps=19 format=2]
+
+[ext_resource path="res://Scenes/world.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/mapPivotPoint.gd" type="Script" id=2]
+[ext_resource path="res://Scripts/Map_Body.gd" type="Script" id=3]
+[ext_resource path="res://Scripts/Tile_Map.gd" type="Script" id=4]
+[ext_resource path="res://Scripts/Ball.gd" type="Script" id=5]
+[ext_resource path="res://Assets/Sprites/Ball/NormalBall.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Controls/Ingame/Right_Arrow_Default.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Controls/Ingame/Right_Arrow_Pressed.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Controls/Ingame/Left_Arrow_Default.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Controls/Ingame/Left_Arrow_Pressed.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Controls/Pause/Pause_Default.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Controls/Pause/Pause_Pressed.png" type="Texture" id=12]
+[ext_resource path="res://Assets/Controls/Pause/Resume_Default.png" type="Texture" id=13]
+[ext_resource path="res://Assets/Controls/Pause/Quit_default.png" type="Texture" id=14]
+[ext_resource path="res://Assets/Controls/Pause/Quit_Pressed.png" type="Texture" id=15]
+[ext_resource path="res://Assets/Controls/Pause/Frame/grey_frame.png" type="Texture" id=16]
+[ext_resource path="res://Scenes/Settings.tscn" type="PackedScene" id=17]
+
+[sub_resource type="CircleShape2D" id=1]
+
+custom_solver_bias = 0.0
+radius = 16.0
+
+[node name="generic_level" type="Node2D" index="0"]
+
+script = ExtResource( 1 )
+_sections_unfolded = [ "Pause" ]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Map_Pivot_Point" type="Position2D" parent="." index="0"]
+
+z_index = -4
+script = ExtResource( 2 )
+_sections_unfolded = [ "Transform", "Z Index" ]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Map_Body" type="KinematicBody2D" parent="Map_Pivot_Point" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+collision/safe_margin = 0.08
+script = ExtResource( 3 )
+_sections_unfolded = [ "Pickable", "Visibility", "Z Index" ]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="TileMap" type="Node2D" parent="Map_Pivot_Point/Map_Body" index="0"]
+
+_sections_unfolded = [ "Z Index" ]
+
+[node name="Colliding_TileMap" type="TileMap" parent="Map_Pivot_Point/Map_Body/TileMap" index="0"]
+
+z_index = -1
+mode = 0
+tile_set = null
+cell_size = Vector2( 32, 32 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 0, 0, 0, 0, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 1
+collision_mask = 1
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray(  )
+script = ExtResource( 4 )
+_sections_unfolded = [ "Cell", "Transform", "Z Index" ]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Background_TileMap" type="TileMap" parent="Map_Pivot_Point/Map_Body/TileMap" index="1"]
+
+z_index = -2
+mode = 0
+tile_set = null
+cell_size = Vector2( 32, 32 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 1
+collision_mask = 1
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray(  )
+_sections_unfolded = [ "Cell", "Visibility", "Z Index" ]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Ball" type="StaticBody2D" parent="." index="1"]
+
+editor/display_folded = true
+z_index = -3
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+script = ExtResource( 5 )
+_sections_unfolded = [ "Collision", "Pause", "Pickable", "Visibility", "Z Index" ]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Ball_Collision" type="CollisionShape2D" parent="Ball" index="0"]
+
+shape = SubResource( 1 )
+_sections_unfolded = [ "Pause" ]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Ball_Sprite" type="Sprite" parent="Ball" index="1"]
+
+texture = ExtResource( 6 )
+_sections_unfolded = [ "Offset" ]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Controls" type="Node2D" parent="." index="2"]
+
+editor/display_folded = true
+z_index = -2
+_sections_unfolded = [ "Z Index" ]
+
+[node name="Right_Arrow" type="TextureButton" parent="Controls" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 304.0
+margin_top = 128.0
+margin_right = 464.0
+margin_bottom = 258.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 7 )
+texture_pressed = ExtResource( 8 )
+_sections_unfolded = [ "Margin", "Textures" ]
+
+[node name="Left_Arrow" type="TextureButton" parent="Controls" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 16.0
+margin_top = 128.0
+margin_right = 176.0
+margin_bottom = 258.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 9 )
+texture_pressed = ExtResource( 10 )
+_sections_unfolded = [ "Textures" ]
+
+[node name="Pause_Button" type="TextureButton" parent="Controls" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 440.0
+margin_right = 480.0
+margin_bottom = 40.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 11 )
+texture_pressed = ExtResource( 12 )
+_sections_unfolded = [ "Textures" ]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Pause_Popup" type="Popup" parent="." index="3"]
+
+pause_mode = 2
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 40.0
+margin_bottom = 40.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+popup_exclusive = false
+_sections_unfolded = [ "Pause" ]
+
+[node name="Controls" type="Control" parent="Pause_Popup" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Resume" type="TextureButton" parent="Pause_Popup/Controls" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 161.0
+margin_top = 80.0
+margin_right = 318.0
+margin_bottom = 141.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 13 )
+texture_pressed = ExtResource( 13 )
+_sections_unfolded = [ "Rect", "Textures" ]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Quit" type="TextureButton" parent="Pause_Popup/Controls" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 199.0
+margin_top = 160.0
+margin_right = 281.0
+margin_bottom = 191.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 14 )
+texture_pressed = ExtResource( 15 )
+_sections_unfolded = [ "Rect", "Textures" ]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Pause_menu" type="Sprite" parent="Pause_Popup" index="1"]
+
+position = Vector2( 240, 135 )
+z_index = -1
+z_as_relative = false
+texture = ExtResource( 16 )
+_sections_unfolded = [ "Transform", "Z Index" ]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Settings" parent="Pause_Popup" index="2" instance=ExtResource( 17 )]
+
+[connection signal="pressed" from="Controls/Right_Arrow" to="Map_Pivot_Point" method="_on_right_arrow_pressed"]
+
+[connection signal="pressed" from="Controls/Left_Arrow" to="Map_Pivot_Point" method="_on_left_arrow_pressed"]
+
+[connection signal="pressed" from="Controls/Pause_Button" to="." method="_on_Pause_Button_pressed"]
+
+[connection signal="pressed" from="Pause_Popup/Controls/Resume" to="." method="_on_Resume_pressed"]
+
+[connection signal="pressed" from="Pause_Popup/Controls/Quit" to="." method="_on_Quit_pressed"]
+
+[connection signal="pressed" from="Pause_Popup/Settings/Settings_Popup/Back" to="." method="_on_Back_pressed"]
+
+[connection signal="pressed" from="Pause_Popup/Settings/Settings" to="." method="_on_Settings_pressed"]
+
+
+[editable path="Pause_Popup/Settings"]
